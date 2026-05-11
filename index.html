@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taj 777 Premium Platform</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#050816;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#00b7ff22;
+      border-radius:50%;
+      top:-200px;
+      left:-150px;
+      filter:blur(100px);
+      z-index:-1;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      width:450px;
+      height:450px;
+      background:#8a2be233;
+      border-radius:50%;
+      bottom:-180px;
+      right:-120px;
+      filter:blur(100px);
+      z-index:-1;
+    }
+
+    nav{
+      width:100%;
+      padding:18px 7%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:999;
+      backdrop-filter:blur(14px);
+      background:rgba(7,10,22,0.7);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:800;
+      letter-spacing:1px;
+    }
+
+    .logo span{
+      color:#00b7ff;
+      text-shadow:0 0 15px #00b7ff;
+    }
+
+    .nav-btn{
+      background:linear-gradient(135deg,#00b7ff,#0066ff);
+      padding:12px 24px;
+      border-radius:40px;
+      font-size:14px;
+      font-weight:600;
+      cursor:pointer;
+      box-shadow:0 10px 25px rgba(0,183,255,.35);
+      transition:.3s;
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .hero{
+      width:100%;
+      min-height:100vh;
+      padding:50px 7% 60px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    .hero-left h4{
+      color:#00b7ff;
+      font-size:18px;
+      margin-bottom:15px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    .hero-left h1{
+      font-size:72px;
+      line-height:1.1;
+      margin-bottom:22px;
+      font-weight:800;
+    }
+
+    .hero-left h1 span{
+      color:#00b7ff;
+    }
+
+    .hero-left p{
+      color:#cfcfcf;
+      line-height:1.9;
+      font-size:16px;
+      max-width:600px;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:18px;
+      margin-top:35px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 32px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:700;
+      transition:.3s;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#25D366,#119c42);
+      color:#fff;
+      box-shadow:0 10px 30px rgba(37,211,102,.35);
+    }
+
+    .btn-primary:hover{
+      transform:scale(1.06);
+    }
+
+    .btn-outline{
+      border:1px solid rgba(255,255,255,0.15);
+      color:#fff;
+      background:rgba(255,255,255,0.04);
+      backdrop-filter:blur(10px);
+    }
+
+    .hero-right{
+      display:flex;
+      justify-content:center;
+    }
+
+    .poster-card{
+      width:420px;
+      border-radius:32px;
+      overflow:hidden;
+      position:relative;
+      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.04);
+      backdrop-filter:blur(12px);
+      box-shadow:0 25px 60px rgba(0,0,0,.45);
+    }
+
+    .poster-card img{
+      width:100%;
+      display:block;
+    }
+
+    .offer-tag{
+      position:absolute;
+      top:20px;
+      left:20px;
+      background:#00b7ff;
+      color:#fff;
+      padding:10px 18px;
+      border-radius:30px;
+      font-weight:700;
+      box-shadow:0 0 20px rgba(0,183,255,.4);
+    }
+
+    .poster-content{
+      padding:28px;
+    }
+
+    .poster-content h2{
+      font-size:48px;
+      color:#00b7ff;
+      margin-bottom:8px;
+    }
+
+    .poster-content p{
+      color:#d6d6d6;
+      line-height:1.8;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+      margin-top:24px;
+    }
+
+    .stat-box{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:18px 10px;
+      border-radius:20px;
+      text-align:center;
+    }
+
+    .stat-box h3{
+      color:#00b7ff;
+      font-size:24px;
+      margin-bottom:5px;
+    }
+
+    .stat-box span{
+      font-size:13px;
+      color:#bbb;
+    }
+
+    .section{
+      padding:90px 7%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:55px;
+    }
+
+    .section-title h2{
+      font-size:48px;
+      margin-bottom:12px;
+    }
+
+    .section-title h2 span{
+      color:#00b7ff;
+    }
+
+    .section-title p{
+      max-width:650px;
+      margin:auto;
+      color:#bfbfbf;
+      line-height:1.8;
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .service-card{
+      padding:35px 28px;
+      border-radius:28px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(10px);
+      transition:.35s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+      border-color:#00b7ff;
+      box-shadow:0 20px 40px rgba(0,183,255,.12);
+    }
+
+    .icon{
+      width:70px;
+      height:70px;
+      border-radius:20px;
+      background:linear-gradient(135deg,#00b7ff,#005eff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      margin-bottom:20px;
+    }
+
+    .service-card h3{
+      font-size:24px;
+      margin-bottom:12px;
+    }
+
+    .service-card p{
+      color:#cfcfcf;
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    .hero-left{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-left p{
+  margin:auto;
+}
+
+.hero-btns{
+  justify-content:center;
+}
+
+    .cta{
+      margin:0 7% 80px;
+      padding:70px 30px;
+      border-radius:35px;
+      text-align:center;
+      background:linear-gradient(135deg,#071522,#0f1030);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .cta h2{
+      font-size:52px;
+      margin-bottom:15px;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.9;
+      color:#ccc;
+    }
+
+    .cta .btn{
+      margin-top:30px;
+    }
+
+    footer{
+      text-align:center;
+      padding:35px 20px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#aaa;
+      background:#03050d;
+    }
+
+    @media(max-width:950px){
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .hero-left p{
+        margin:auto;
+      }
+
+      .hero-btns{
+        justify-content:center;
+      }
+
+      .hero-left h1{
+        font-size:54px;
+      }
+    }
+
+    @media(max-width:600px){
+      .hero-left h1{
+        font-size:40px;
+      }
+
+      .poster-card{
+        width:100%;
+      }
+
+      .section-title h2,
+      .cta h2{
+        font-size:34px;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">TAJ <span>777</span></div>
+    <div class="nav-btn" onclick="openWhatsApp()">Join Now</div>
+  </nav>
+
+  <section class="hero">
+
+    <div class="hero-right">
+  <a href="https://tajbook.short.gy/getyourIDnow" target="_blank" style="text-decoration:none; color:inherit;">
+    
+    <div class="poster-card">
+      <span class="offer-tag">10% BONUS</span>
+
+      <img src="image.jpeg" alt="Premium Banner">
+
+      
+    </div>
+
+  </a>
+</div>
+
+    <div class="hero-left" style="margin-top:45px;">
+      <h4>Premium Digital Platform</h4>
+
+      <h1>Modern <span>Premium Services</span> Experience</h1>
+
+      <p>
+        Taj 777 provides a smooth premium platform experience with instant support,
+        fast onboarding, exclusive benefits, and a modern user-friendly interface.
+        Connect now and unlock exciting welcome offers instantly.
+      </p>
+
+      <div class="hero-btns">
+        <a href="https://tajbook.short.gy/getyourIDnow" class="btn btn-primary">
+          💬 WhatsApp Now
+        </a>
+
+        <a href="#services" class="btn btn-outline">
+          Explore Services
+        </a>
+      </div>
+    </div>
+
+    </section>
+
+  <section class="section">
+
+    <div class="section-title">
+      <h2>Why Choose <span>Taj 777?</span></h2>
+      <p>
+        Taj 777 focuses on providing a premium digital experience with trusted support,
+        modern interface design, instant communication, and smooth onboarding for every user.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="icon">⭐</div>
+        <h3>Premium Experience</h3>
+        <p>
+          Clean modern interface with smooth navigation and premium user-focused design.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">💬</div>
+        <h3>Quick WhatsApp Support</h3>
+        <p>
+          Dedicated support assistance available anytime for fast communication and help.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🎯</div>
+        <h3>Exclusive Offers</h3>
+        <p>
+          Unlock exciting welcome bonuses, discounts, and special premium access benefits.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🔐</div>
+        <h3>Trusted Platform</h3>
+        <p>
+          Reliable and secure experience built to deliver smooth service and customer satisfaction.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="services">
+
+    <div class="section-title">
+      <h2>Our <span>Services</span></h2>
+      <p>
+        Premium digital support services designed for a smooth and modern experience.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="icon">🚀</div>
+        <h3>Premium Access</h3>
+        <p>
+          Unlock exclusive premium features and special user benefits instantly.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">⚡</div>
+        <h3>Fast Assistance</h3>
+        <p>
+          Quick onboarding and smooth customer support available anytime.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🎁</div>
+        <h3>Exclusive Offers</h3>
+        <p>
+          Enjoy exciting discounts and special welcome rewards for new users.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🔒</div>
+        <h3>Secure Experience</h3>
+        <p>
+          Modern and reliable platform experience focused on user satisfaction.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <div class="section-title">
+      <h2>Platform <span>Benefits</span></h2>
+      <p>
+        Discover why thousands of users choose Taj 777 for premium access and trusted assistance.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="icon">⚡</div>
+        <h3>Instant Assistance</h3>
+        <p>
+          Fast onboarding and quick response support designed to save your time.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">📱</div>
+        <h3>Mobile Friendly</h3>
+        <p>
+          Fully responsive modern design that works perfectly across all devices.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🚀</div>
+        <h3>Easy Access</h3>
+        <p>
+          Smooth and simple process to connect and get started within minutes.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🏆</div>
+        <h3>Premium Support</h3>
+        <p>
+          Dedicated customer support focused on delivering a better experience.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="cta">
+    <h2>Get Started Today</h2>
+
+    <p>
+      Join Taj 777 now and connect with our team for premium access and instant support.
+    </p>
+
+    <a href="https://tajbook.short.gy/getyourIDnow" class="btn btn-primary">
+      Connect On WhatsApp
+    </a>
+  </section>
+
+  <footer>
+    <h3>Taj 777 Premium Platform</h3>
+    <p>Fast Support • Premium Experience • Trusted Service</p>
+    <br>
+    <p>© 2026 Taj 777. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function openWhatsApp(){
+      window.open('https://tajbook.short.gy/getyourIDnow','_blank');
+    }
+  </script>
+
+</body>
+</html>
